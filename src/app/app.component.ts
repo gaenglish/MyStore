@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {ProductService} from './core/services/products.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'my-store';
+
+  products$ = this.productService.products$;
+  refreshProducts = this.productService.refreshProducts;
+
+  constructor(private productService: ProductService) {}
+
 }

@@ -3,7 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  settings: {
+    API_BASE_URL: '',
+    ADD_AUTH_TOKEN: false
+  }
 };
 
 /*
