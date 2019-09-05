@@ -9,8 +9,7 @@ import {ProductService} from './core/services/products.service';
 export class AppComponent {
 
   products$ = this.productService.products$;
-  refreshProducts = this.productService.refreshProducts;
 
-  constructor(private productService: ProductService) {}
+  constructor(public productService: ProductService) {}
 
 }

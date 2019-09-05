@@ -8,12 +8,14 @@ import {
 import { environment } from '../../../environments/environment';
 import {productsReducer, ProductState} from './products.store';
 
-export interface AppState {
+
+export interface State {
   products: ProductState;
 }
 
-export const appReducer: ActionReducerMap<AppState> = {
+export const reducers: ActionReducerMap<State> = {
   products: productsReducer
 };
 
-export const metaReducers: MetaReducer<AppState>[] = !environment.production ? [] : [];
+
+export const metaReducers: MetaReducer<State>[] = !environment.production ? [] : [];

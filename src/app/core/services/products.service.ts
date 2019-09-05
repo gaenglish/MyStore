@@ -1,8 +1,8 @@
-import {AppState} from '../store';
+import {State} from '../store';
 import {Store} from '@ngrx/store';
 import {Injectable} from '@angular/core';
 import {Product} from '../models/product.model';
-import {coldObservable, coldObservablePersist} from '../util/cold-observable';
+import {coldObservable} from '../util/cold-observable';
 import {DataService} from './data.service';
 import {PageRequest} from '../models/page-request.model';
 import {selectProducts, selectAllProducts, UpsertManyProducts, RemoveAllProducts} from '../store/products.store';
@@ -12,7 +12,8 @@ import {selectProducts, selectAllProducts, UpsertManyProducts, RemoveAllProducts
 })
 export class ProductService {
 
-  constructor(private store: Store<AppState>, private data: DataService) {
+  constructor(private store: Store<State>,
+              private data: DataService) {
   }
 
   products$ = coldObservable<Product[], Product[]>(
@@ -23,6 +24,10 @@ export class ProductService {
     response => this.store.dispatch(new UpsertManyProducts(JSON.parse(JSON.stringify(response.body))))
   );
 
+  refreshProducts() {
+    this.store.dispatch(new RemoveAllProducts());
+  }
+
   next$ = (page: PageRequest) => coldObservable<Product[], Product[]>(
     this.store.select(selectProducts(page.ids)),
     product => !product,
@@ -31,7 +36,5 @@ export class ProductService {
     response => this.store.dispatch(new UpsertManyProducts(response.body as Product[]))
   );
 
-  refreshProducts() {
-    this.store.dispatch(new RemoveAllProducts());
-  }
+
 }

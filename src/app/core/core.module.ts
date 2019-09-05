@@ -1,13 +1,22 @@
 import {ModuleWithProviders, NgModule, Optional, SkipSelf} from '@angular/core';
 import {StoreModule} from '@ngrx/store';
-import {metaReducers, appReducer} from './store';
+import {metaReducers, reducers} from './store';
 import {HttpClientModule} from '@angular/common/http';
 import {OAuthModule} from 'angular-oauth2-oidc';
 import {ProductService} from './services/products.service';
+import {environment} from '../../environments/environment';
+import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 
 @NgModule({
   imports: [
-    StoreModule.forRoot(appReducer, { metaReducers }),
+    StoreModule.forRoot(reducers, {
+      metaReducers,
+      runtimeChecks: {
+        strictStateImmutability: true,
+        strictActionImmutability: true,
+      }
+    }),
+    !environment.production ? StoreDevtoolsModule.instrument() : [],
     HttpClientModule,
     OAuthModule.forRoot()
   ]

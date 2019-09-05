@@ -1,6 +1,6 @@
 import {Product} from '../models/product.model';
 import {Action, createSelector} from '@ngrx/store';
-import {AppState} from './';
+import {State} from './';
 import {createEntityAdapter, EntityState} from '@ngrx/entity';
 
 export const adapter = createEntityAdapter<Product>({
@@ -69,7 +69,7 @@ export function productsReducer(
   }
 }
 
-export const selectProductState = (state: AppState) => state.products;
+export const selectProductState = (state: State) => state.products;
 
 export const {
   selectAll: selectAllProducts,
