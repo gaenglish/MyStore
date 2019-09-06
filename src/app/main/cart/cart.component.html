@@ -1,0 +1,20 @@
+
+<ng-container *ngIf="cart$ | async as cartItems">
+
+  <ng-container *ngIf="cartItems.length > 0; else emptyCart">
+
+    <button mat-icon-button (click)="toggleCart.emit()">
+      <mat-icon [matBadge]="cartItems.length" matBadgeColor="accent">shopping_cart</mat-icon>
+    </button>
+
+  </ng-container>
+
+  <ng-template #emptyCart>
+    <button mat-icon-button (click)="toggleCart.emit()">
+      <mat-icon>shopping_cart</mat-icon>
+    </button>
+  </ng-template>
+
+</ng-container>
+
+

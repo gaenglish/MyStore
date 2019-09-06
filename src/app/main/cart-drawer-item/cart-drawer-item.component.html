@@ -1,0 +1,24 @@
+<div class="cart-item">
+  <div class="item-image">
+    <img [src]="'/assets/product-images/' + product.image">
+  </div>
+  <div>
+
+  </div>
+
+  <div>
+    <div class="text">
+      <div class="title">
+        {{ product.name }}
+      </div>
+      <div class="actions">
+
+        <button mat-icon-button (click)="cartService.removeCartItem(cartItem.productId)">
+          <mat-icon color="warn">remove_shopping_cart</mat-icon>
+        </button>
+
+      </div>
+    </div>
+  </div>
+
+</div>

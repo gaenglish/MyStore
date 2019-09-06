@@ -1,0 +1,19 @@
+<mat-toolbar class="toolbar" color="primary">
+
+  <mat-toolbar-row>
+
+    <div class="logo">
+      <ng-content select=".logo"></ng-content>
+    </div>
+
+    <div class="menu">
+      <ng-content select=".menu"></ng-content>
+    </div>
+    <div class="flex-spacer"></div>
+    <div class="actions">
+      <ng-content select=".actions"></ng-content>
+    </div>
+
+  </mat-toolbar-row>
+
+</mat-toolbar>

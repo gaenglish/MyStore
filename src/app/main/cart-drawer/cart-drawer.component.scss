@@ -1,0 +1,15 @@
+.cart-drawer {
+  min-width: 240px;
+  padding: 1rem;
+
+  .cart-title {
+    margin: 0 0 1rem 0;
+  }
+
+  .cart-close {
+    position: absolute;
+    right: .5rem;
+    top: .5rem;
+  }
+
+}

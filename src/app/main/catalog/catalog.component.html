@@ -1,0 +1,18 @@
+<ng-container *ngIf="products$ | async as products">
+
+  <div class="centered">
+
+    <div class="catalog">
+
+      <div class="catalog-item"
+           *ngFor="let product of products" [class.double]="product.double">
+
+        <app-catalog-item [product]="product"></app-catalog-item>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</ng-container>

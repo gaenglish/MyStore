@@ -1,10 +1,83 @@
 [
   {
     "id": 1,
-    "name": "iPhone"
+    "name": "Watch Series 4",
+    "image": "watch-gold-pink.jpeg"
   },
   {
     "id": 2,
-    "name": "iPad"
+    "name": "Apple Watch Nike+",
+    "description": "Silver Aluminum Case with Pure Platinum/Black Nike Sport Band 40/44mm",
+    "image": "watch-nike-white.png"
+  },
+  {
+    "id": 3,
+    "name": "Apple Watch Nike+",
+    "description": "Space Gray Aluminum Case with Anthracite/Black Nike Sport Band",
+    "image": "watch-nike-black.png"
+  },
+  {
+    "id": 4,
+    "name": "iPad Air",
+    "image": "ipad-air.jpeg",
+    "colors": ["Space Gray", "Silver", "Gold"]
+  },
+  {
+    "id": 5,
+    "name": "iPad Pro 11 inch",
+    "image": "ipad-pro-11.png"
+  },
+  {
+    "id": 6,
+    "name": "iPad Pro 12 inch",
+    "price": 899,
+    "image": "ipad-pro-12.png"
+  },
+  {
+    "id": 7,
+    "name": "iMac 27",
+    "price": 1899,
+    "image": "imac-27.jpeg"
+  },
+  {
+    "id": 8,
+    "name": "iPhone Xr",
+    "price": 479,
+    "image": "iphone-xr.jpeg",
+    "double": true
+  },
+  {
+    "id": 9,
+    "name": "Macbook Pro",
+    "description": "13 inch display",
+    "price": 1299,
+    "image": "macbook-pro-13-silver.jpeg"
+  },
+
+  {
+    "id": 10,
+    "name": "Apple TV 4k",
+    "price": 199,
+    "image": "apple-tv-4k.jpeg"
+  },
+  {
+    "id": 11,
+    "name": "iMac 27",
+    "price": 1899,
+    "image": "imac-27.jpeg"
+  },
+  {
+    "id": 12,
+    "name": "Macbook Pro",
+    "price": 2399,
+    "image": "macbook-pro-15-grey.jpeg"
+  },
+  {
+    "id": 13,
+    "name": "AirPods",
+    "description": "w/ Wireless Charging Case",
+    "price": 199,
+    "image": "airpods.png"
   }
+
 ]

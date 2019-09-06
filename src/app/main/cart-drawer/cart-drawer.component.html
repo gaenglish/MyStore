@@ -1,0 +1,27 @@
+<div class="cart-drawer">
+
+  <h2 class="cart-title">My Cart</h2>
+
+  <button class="checkout-button" mat-button color="primary" routerLink="checkout">
+    Checkout
+    <mat-icon>navigate_next</mat-icon>
+  </button>
+
+  <button class="cart-close" mat-icon-button (click)="drawerToggle.emit()">
+    <mat-icon>close</mat-icon>
+  </button>
+
+  <ng-container *ngIf="productDictionary$ | async as products">
+
+    <div *ngFor="let item of cart$ | async" [@fadeIn]="true">
+
+      <app-cart-drawer-item [product]="products[item.productId]" [cartItem]="item"></app-cart-drawer-item>
+
+    </div>
+
+
+  </ng-container>
+
+
+
+</div>

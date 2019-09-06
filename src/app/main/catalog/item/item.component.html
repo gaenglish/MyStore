@@ -1,0 +1,24 @@
+
+<ng-container *ngIf="cartService.cartDictionary$ | async as cart">
+  <mat-card class="product-card">
+
+    <img class="image" [src]="'/assets/product-images/' + product.image">
+
+    <div class="name">
+      {{ product.name }}
+    </div>
+
+    <div class="description">
+      {{ product.description }}
+    </div>
+
+    <div class="price">
+      {{ product.price | currency }}
+    </div>
+
+    <button class="shopping-cart" mat-icon-button [color]="'primary'" (click)="cartService.addCartItem(product.id)">
+      <mat-icon>{{ !cart[product.id] ? 'add_shopping_cart' : 'shopping_cart' }}</mat-icon>
+    </button>
+
+  </mat-card>
+</ng-container>

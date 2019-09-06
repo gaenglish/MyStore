@@ -1,0 +1,42 @@
+
+<mat-drawer-container autosize>
+
+  <mat-drawer #drawer
+              class="cart"
+              mode="side"
+              position="end">
+
+    <app-cart-drawer (drawerToggle)="drawer.toggle()"></app-cart-drawer>
+
+  </mat-drawer>
+
+  <div class="main">
+
+    <div class="main-toolbar">
+
+      <app-toolbar>
+        <ng-container class="logo">
+          My Store
+        </ng-container>
+        <ng-container class="menu">
+          <button type="button" mat-button (click)="drawer.toggle()">
+            Toggle sidenav
+          </button>
+        </ng-container>
+        <ng-container class="actions">
+
+          <div class="cart-toggle">
+            <app-cart (toggleCart)="drawer.toggle()"></app-cart>
+          </div>
+
+        </ng-container>
+      </app-toolbar>
+
+    </div>
+
+    <div class="main-content">
+      <app-catalog></app-catalog>
+    </div>
+
+  </div>
+</mat-drawer-container>

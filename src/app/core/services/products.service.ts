@@ -2,10 +2,12 @@ import {State} from '../store';
 import {Store} from '@ngrx/store';
 import {Injectable} from '@angular/core';
 import {Product} from '../models/product.model';
-import {coldObservable} from '../util/cold-observable';
+import {coldObservable, coldObservablePersist} from '../util/cold-observable';
 import {DataService} from './data.service';
 import {PageRequest} from '../models/page-request.model';
-import {selectProducts, selectAllProducts, UpsertManyProducts, RemoveAllProducts} from '../store/products.store';
+import {selectProducts, selectAllProducts, UpsertManyProducts, RemoveAllProducts, selectProductEntities} from '../store/products.store';
+import {Observable} from 'rxjs';
+import {Dictionary} from '@ngrx/entity';
 
 @Injectable({
   providedIn: 'root'
@@ -20,6 +22,14 @@ export class ProductService {
     this.store.select(selectAllProducts),
     product => product.length < 1,
     this.store.select(selectAllProducts),
+    () => this.data.get('assets/products.json', {}, '/'),
+    response => this.store.dispatch(new UpsertManyProducts(JSON.parse(JSON.stringify(response.body))))
+  );
+
+  productDictionary$ = coldObservable<Product[], Dictionary<Product>>(
+    this.store.select(selectAllProducts),
+    product => product.length < 1,
+    this.store.select(selectProductEntities),
     () => this.data.get('assets/products.json', {}, '/'),
     response => this.store.dispatch(new UpsertManyProducts(JSON.parse(JSON.stringify(response.body))))
   );
