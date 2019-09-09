@@ -15,13 +15,13 @@
         "id": 1,
         "name": "40mm",
         "price": 399,
-        "image": "watch-nike-white.jpeg"
+        "image": "watch-nike-black.jpeg"
       },
       "2": {
         "id": 2,
         "name": "44mm",
         "price": 429,
-        "image": "watch-nike-white.jpeg"
+        "image": "watch-nike-black.jpeg"
       }
     }
   },

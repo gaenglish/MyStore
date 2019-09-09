@@ -1,6 +1,6 @@
 <div class="cart-item">
   <div class="item-image">
-    <img [src]="'/assets/product-images/' + product.image">
+    <img [src]="'/assets/product-images/' + (!cartItem.optionId ? product.image : (product.options[cartItem.optionId].image || product.image))">
   </div>
 
   <div>
