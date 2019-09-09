@@ -1,14 +1,14 @@
 import {
   ActionReducer,
   ActionReducerMap,
-  createFeatureSelector,
-  createSelector,
   MetaReducer
 } from '@ngrx/store';
 import { environment } from '../../../environments/environment';
 import {productsReducer, ProductState} from './products.store';
 import {cartReducer, CartState} from './cart.store';
+import { localStorageSync } from 'ngrx-store-localstorage';
 
+const STORE_KEYS_TO_PERSIST = ['cart'];
 
 export interface State {
   products: ProductState;
@@ -20,5 +20,11 @@ export const reducers: ActionReducerMap<State> = {
   cart: cartReducer
 };
 
+export function localStorageSyncReducer(reducer: ActionReducer<any>): ActionReducer<any> {
+  return localStorageSync({
+    keys: STORE_KEYS_TO_PERSIST,
+    rehydrate: true,
+  })(reducer);
+}
 
-export const metaReducers: MetaReducer<State>[] = !environment.production ? [] : [];
+export const metaReducers: MetaReducer<State>[] = [localStorageSyncReducer];
