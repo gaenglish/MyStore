@@ -15,7 +15,7 @@
           mat-icon-button [color]="'primary'"
           (click)="cart.addCartItem(product.id, optionId)">
 
-    <mat-icon [matTooltip]="cart.hasItem(product.id, optionId) ? 'In cart' : ''">
+    <mat-icon [matTooltip]="(product.options && !optionId) ? 'Select a ' + product.optionsLabel : (cart.hasItem(product.id, optionId) ? 'In cart' : 'Add to cart')">
       {{ cart.hasItem(product.id, optionId) ? 'shopping_cart' : 'add_shopping_cart' }}
     </mat-icon>
 
