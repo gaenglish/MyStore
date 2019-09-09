@@ -82,32 +82,32 @@
       "1": {
         "id": 1,
         "name": "Black",
-        "image": ""
+        "image": "iphone-xr-black.png"
       },
       "2": {
         "id": 2,
         "name": "White",
-        "image": ""
+        "image": "iphone-xr-white.png"
       },
       "3": {
         "id": 3,
         "name": "Red",
-        "image": ""
+        "image": "iphone-xr-red.png"
       },
       "4": {
         "id": 4,
         "name": "Coral",
-        "image": ""
+        "image": "iphone-xr-coral.png"
       },
       "5": {
         "id": 5,
         "name": "Yellow",
-        "image": ""
+        "image": "iphone-xr-yellow.png"
       },
       "6": {
         "id": 6,
         "name": "Blue",
-        "image": ""
+        "image": "iphone-xr-blue.png"
       }
     }
   },
