@@ -38,6 +38,7 @@ import {RouterModule} from '@angular/router';
 import {MatDatepickerModule} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { ToolbarComponent } from './toolbar/toolbar.component';
+import { AddToCartComponent } from './add-to-cart/add-to-cart.component';
 
 @NgModule({
   imports: [
@@ -82,7 +83,7 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
     MatDividerModule,
     MatDialogModule,
   ],
-  declarations: [ToolbarComponent],
+  declarations: [ToolbarComponent, AddToCartComponent],
   exports: [
     // Modules
     FormsModule,
@@ -121,7 +122,8 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
     MatProgressSpinnerModule,
     MatDividerModule,
     MatDialogModule,
-    ToolbarComponent
+    ToolbarComponent,
+    AddToCartComponent
   ],
   entryComponents: []
 })

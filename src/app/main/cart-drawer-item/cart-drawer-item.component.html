@@ -2,23 +2,36 @@
   <div class="item-image">
     <img [src]="'/assets/product-images/' + product.image">
   </div>
-  <div>
-
-  </div>
 
   <div>
-    <div class="text">
-      <div class="title">
-        {{ product.name }}
+
+    <div class="title">
+      {{ product.name }}
+    </div>
+
+    <div class="sub-title" *ngIf="cartItem.optionId">
+      {{ product.options[cartItem.optionId]?.name }}
+    </div>
+
+    <div class="actions">
+
+      <div>
+        {{ (!cartItem.optionId ? product.price : (product.options[cartItem.optionId].price || product.price)) | currency }}
       </div>
-      <div class="actions">
 
-        <button mat-icon-button (click)="cartService.removeCartItem(cartItem.productId)">
+      <div>
+
+      </div>
+
+      <div class="remove-from-cart">
+        <button mat-icon-button (click)="cartService.removeCartItem(cartItem)">
           <mat-icon color="warn">remove_shopping_cart</mat-icon>
         </button>
-
       </div>
+
     </div>
+
+
   </div>
 
 </div>

@@ -18,18 +18,21 @@
     }
   }
 
-  .text {
+  .title {
+    font-weight: 500;
+    font-size: 1rem;
+    text-overflow: ellipsis;
+  }
+
+  .sub-title {
+    color: darkgrey;
+  }
+  .actions {
     display: flex;
     flex-direction: row;
     align-items: center;
 
-    .title {
-      font-weight: 500;
-      font-size: 1rem;
-      text-overflow: ellipsis;
-    }
-
-    .actions {
+    .remove-from-cart {
       flex-grow: 0;
     }
   }

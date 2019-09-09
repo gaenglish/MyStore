@@ -12,13 +12,12 @@
       {{ product.description }}
     </div>
 
-    <div class="price">
-      {{ product.price | currency }}
+
+
+    <div class="add-to-cart">
+      <app-add-to-cart [product]="product"></app-add-to-cart>
     </div>
 
-    <button class="shopping-cart" mat-icon-button [color]="'primary'" (click)="cartService.addCartItem(product.id)">
-      <mat-icon>{{ !cart[product.id] ? 'add_shopping_cart' : 'shopping_cart' }}</mat-icon>
-    </button>
 
   </mat-card>
 </ng-container>

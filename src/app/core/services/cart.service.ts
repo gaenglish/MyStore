@@ -17,12 +17,12 @@ export class CartService {
   cart$ = this.store.select(selectCart);
   cartDictionary$ = this.store.select(selectCartEntities);
 
-  addCartItem(productId: number, qty = 1) {
-    this.store.dispatch(new UpsertOneCartItem({ productId, qty }));
+  addCartItem(productId: number, optionId = null, qty = 1) {
+    this.store.dispatch(new UpsertOneCartItem({ productId, optionId, qty }));
   }
 
-  removeCartItem(productId: number) {
-    this.store.dispatch(new RemoveOneCartItem(productId));
+  removeCartItem(cartItem: CartItem) {
+    this.store.dispatch(new RemoveOneCartItem(cartItem));
   }
 
   removeAllCartItems() {

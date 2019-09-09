@@ -1,0 +1,27 @@
+<div class="add-to-cart" *ngIf="cart.cartDictionary$ | async as cartItems">
+
+
+  <mat-form-field class="options" *ngIf="product.options">
+    <mat-label>{{ product.optionsLabel }}</mat-label>
+    <mat-select [(value)]="optionId">
+      <mat-option *ngFor="let option of product.options | keyvalue"
+                  [value]="option.key">{{ option.value.name }} ({{ option.value.price | currency }})</mat-option>
+    </mat-select>
+
+  </mat-form-field>
+
+
+  {{ product.price | currency:'USD':'symbol':'1.0' }}
+
+
+  <button [disabled]="(!product.options && cartItems[product.id]) || (product.options && !optionId)"
+          mat-icon-button [color]="'primary'"
+          (click)="cart.addCartItem(product.id, optionId)">
+
+    <mat-icon [matTooltip]="!cartItems[product.id] ? '' : 'In cart'">
+      {{ !cartItems[product.id] ? 'add_shopping_cart' : 'shopping_cart' }}
+    </mat-icon>
+
+  </button>
+
+</div>

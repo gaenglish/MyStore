@@ -8,13 +8,43 @@
     "id": 2,
     "name": "Apple Watch Nike+",
     "description": "Silver Aluminum Case with Pure Platinum/Black Nike Sport Band 40/44mm",
-    "image": "watch-nike-white.png"
+    "image": "watch-nike-black.png",
+    "optionsLabel": "Size",
+    "options": {
+      "1": {
+        "id": 1,
+        "name": "40mm",
+        "price": 399,
+        "image": "watch-nike-white.jpeg"
+      },
+      "2": {
+        "id": 2,
+        "name": "44mm",
+        "price": 429,
+        "image": "watch-nike-white.jpeg"
+      }
+    }
   },
   {
     "id": 3,
     "name": "Apple Watch Nike+",
     "description": "Space Gray Aluminum Case with Anthracite/Black Nike Sport Band",
-    "image": "watch-nike-black.png"
+    "image": "watch-nike-white.png",
+    "optionsLabel": "Size",
+    "options": {
+      "1": {
+        "id": 1,
+        "name": "40mm",
+        "price": 399,
+        "image": "watch-nike-white.jpeg"
+      },
+      "2": {
+        "id": 2,
+        "name": "44mm",
+        "price": 429,
+        "image": "watch-nike-white.jpeg"
+      }
+    }
   },
   {
     "id": 4,
@@ -35,16 +65,51 @@
   },
   {
     "id": 7,
-    "name": "iMac 27",
-    "price": 1899,
-    "image": "imac-27.jpeg"
+    "name": "iMac 27 inch",
+    "price": 2299,
+    "image": "imac-27.jpeg",
+    "description": "3.7GHz 6-Core Processor with Turbo Boost up to 4.6GHz, 2TB Storage, Retina 5K Display"
   },
   {
     "id": 8,
     "name": "iPhone Xr",
     "price": 479,
     "image": "iphone-xr.jpeg",
-    "double": true
+    "double": true,
+    "description": "color options: red, yellow, white, coral, black, blue",
+    "optionsLabel": "Color",
+    "options": {
+      "1": {
+        "id": 1,
+        "name": "Black",
+        "image": ""
+      },
+      "2": {
+        "id": 2,
+        "name": "White",
+        "image": ""
+      },
+      "3": {
+        "id": 3,
+        "name": "Red",
+        "image": ""
+      },
+      "4": {
+        "id": 4,
+        "name": "Coral",
+        "image": ""
+      },
+      "5": {
+        "id": 5,
+        "name": "Yellow",
+        "image": ""
+      },
+      "6": {
+        "id": 6,
+        "name": "Blue",
+        "image": ""
+      }
+    }
   },
   {
     "id": 9,
@@ -62,9 +127,10 @@
   },
   {
     "id": 11,
-    "name": "iMac 27",
-    "price": 1899,
-    "image": "imac-27.jpeg"
+    "name": "iMac 27 inch",
+    "price": 1999,
+    "image": "imac-27.jpeg",
+    "description": "3.1GHz 6-Core Processor with Turbo Boost up to 4.3GHz, 1TB Storage, Retina 5K Display"
   },
   {
     "id": 12,

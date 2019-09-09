@@ -4,7 +4,14 @@ export interface Product {
   description: string;
   price: number;
   image: string;
-  colors: string[];
-  options: string[];
-  type
+  optionsLabel: string;
+  options: { [id: string]: ProductOption };
+}
+
+export interface ProductOption {
+  id: number;
+  name: string;
+  description: string;
+  price: number;
+  image: string;
 }

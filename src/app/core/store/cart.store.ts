@@ -1,11 +1,15 @@
 import {CartItem} from '../models/cart.model';
-import {Action, createSelector} from '@ngrx/store';
+import {Action} from '@ngrx/store';
 import {State} from './';
 import {createEntityAdapter, EntityState} from '@ngrx/entity';
 
 export const adapter = createEntityAdapter<CartItem>({
-  selectId: (item: CartItem) => item.productId
+  selectId: (item: CartItem) => generateKey(item)
 });
+
+export function generateKey(item: CartItem) {
+  return item.productId + (!item.optionId ? '' : '|' + item.optionId);
+}
 
 export interface CartState extends EntityState<CartItem> {}
 
@@ -15,7 +19,6 @@ export enum CartActionTypes {
   UPSERT_ONE = '[Cart] UpsertOne',
   UPSERT_MANY = '[Cart] UpsertMany',
   REMOVE_ONE = '[Cart] RemoveOne',
-  REMOVE_MANY = '[Cart] RemoveMany',
   REMOVE_ALL = '[Cart] RemoveAll'
 }
 
@@ -31,12 +34,7 @@ export class UpsertManyCartItems implements Action {
 
 export class RemoveOneCartItem implements Action {
   readonly type = CartActionTypes.REMOVE_ONE;
-  constructor(public payload: number ) {}
-}
-
-export class RemoveManyCartItems implements Action {
-  readonly type = CartActionTypes.REMOVE_MANY;
-  constructor(public payload: number[] ) {}
+  constructor(public payload: CartItem ) {}
 }
 
 export class RemoveAllCartItems implements Action {
@@ -46,7 +44,6 @@ export class RemoveAllCartItems implements Action {
 export type CartActions = UpsertOneCartItem
   | UpsertManyCartItems
   | RemoveOneCartItem
-  | RemoveManyCartItems
   | RemoveAllCartItems;
 
 export function cartReducer(
@@ -59,9 +56,7 @@ export function cartReducer(
     case CartActionTypes.UPSERT_MANY:
       return adapter.upsertMany(action.payload, state);
     case CartActionTypes.REMOVE_ONE:
-      return adapter.removeOne(action.payload, state);
-    case CartActionTypes.REMOVE_MANY:
-      return adapter.removeMany(action.payload, state);
+      return adapter.removeOne(generateKey(action.payload), state);
     case CartActionTypes.REMOVE_ALL:
       return adapter.removeAll(state);
     default:

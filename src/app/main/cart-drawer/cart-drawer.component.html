@@ -1,27 +1,39 @@
 <div class="cart-drawer">
 
-  <h2 class="cart-title">My Cart</h2>
+  <div class="drawer-header">
 
-  <button class="checkout-button" mat-button color="primary" routerLink="checkout">
-    Checkout
-    <mat-icon>navigate_next</mat-icon>
-  </button>
+    <h2 class="cart-title">My Cart</h2>
 
-  <button class="cart-close" mat-icon-button (click)="drawerToggle.emit()">
-    <mat-icon>close</mat-icon>
-  </button>
+    <button class="cart-close" mat-icon-button (click)="drawerToggle.emit()">
+      <mat-icon>close</mat-icon>
+    </button>
+
+    <div class="cart-checkout">
+      <div class="cart-total">
+
+      </div>
+      <div class="checkout-button">
+        <button class="checkout-button" mat-stroked-button color="primary" routerLink="checkout">
+          Checkout
+          <mat-icon>navigate_next</mat-icon>
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+
+
+
 
   <ng-container *ngIf="productDictionary$ | async as products">
 
-    <div *ngFor="let item of cart$ | async" [@fadeIn]="true">
+    <div *ngFor="let item of cart$ | async" [@fade]="'in'">
 
       <app-cart-drawer-item [product]="products[item.productId]" [cartItem]="item"></app-cart-drawer-item>
 
     </div>
 
-
   </ng-container>
-
-
 
 </div>
