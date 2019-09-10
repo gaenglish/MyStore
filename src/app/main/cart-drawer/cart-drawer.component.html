@@ -12,28 +12,34 @@
       <div class="cart-total">
 
       </div>
-      <div class="checkout-button">
+
+      <div class="checkout-button"
+           *ngIf="(cart.cartItemCount$ | async) > 0"
+           [@fade]="'in'">
+
         <button class="checkout-button" mat-stroked-button color="primary" routerLink="checkout">
           Checkout
           <mat-icon>navigate_next</mat-icon>
         </button>
+
       </div>
     </div>
-
   </div>
-
-
-
-
 
   <ng-container *ngIf="productDictionary$ | async as products">
 
-    <div *ngFor="let item of cart$ | async" [@fade]="'in'">
+    <div *ngFor="let item of cart.cartItems$ | async as items" [@fade]="'in'">
 
       <app-cart-drawer-item [product]="products[item.productId]" [cartItem]="item"></app-cart-drawer-item>
 
     </div>
 
   </ng-container>
+
+  <div class="empty-cart">
+
+    <app-empty-cart [@fade]="'in'" *ngIf="(cart.cartItemCount$ | async) > 1"></app-empty-cart>
+
+  </div>
 
 </div>

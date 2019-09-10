@@ -1,6 +1,6 @@
 <div class="add-to-cart" *ngIf="cart.cartDictionary$ | async as cartItems">
 
-  {{ product.price | currency:'USD':'symbol':'1.0' }}
+  <span class="price">{{ product.price | currency:'USD':'symbol':'1.0' }}</span>
 
   <mat-form-field class="options" *ngIf="product.options">
     <mat-label>{{ product.optionsLabel }}</mat-label>

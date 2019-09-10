@@ -1,6 +1,6 @@
-<div class="cart-item">
+<div class="cart-item" *ngIf="product">
   <div class="item-image">
-    <img [src]="'/assets/product-images/' + (!cartItem.optionId ? product.image : (product.options[cartItem.optionId].image || product.image))">
+    <app-product-image [product]="product" [optionId]="cartItem.optionId"></app-product-image>
   </div>
 
   <div>
@@ -20,7 +20,7 @@
       </div>
 
       <div>
-
+        <app-quantity-toggle></app-quantity-toggle>
       </div>
 
       <div class="remove-from-cart">

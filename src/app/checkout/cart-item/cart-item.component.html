@@ -1,0 +1,5 @@
+<ng-container *ngIf="productService.productDictionary$ | async as products">
+
+  <app-product-image [product]="products[cartItem.productId]" [optionId]="cartItem.optionId"></app-product-image>
+
+</ng-container>

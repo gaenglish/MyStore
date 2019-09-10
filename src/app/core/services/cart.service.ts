@@ -3,7 +3,7 @@ import {Store} from '@ngrx/store';
 import {State} from '../store';
 import {DataService} from './data.service';
 import {CartItem} from '../models/cart.model';
-import {RemoveAllCartItems, RemoveOneCartItem, selectCart, selectCartEntities, UpsertOneCartItem} from '../store/cart.store';
+import {RemoveAllCartItems, RemoveOneCartItem, selectCart, selectCartEntities, selectCartItemCount, UpsertOneCartItem} from '../store/cart.store';
 
 @Injectable({
   providedIn: 'root'
@@ -15,8 +15,9 @@ export class CartService {
   constructor(private store: Store<State>,
               private data: DataService) { }
 
-  cart$ = this.store.select(selectCart);
+  cartItems$ = this.store.select(selectCart);
   cartDictionary$ = this.store.select(selectCartEntities);
+  cartItemCount$ = this.store.select(selectCartItemCount);
 
   addCartItem(productId: number, optionId = null, qty = 1) {
     this.cartItems.push(productId + '|' + optionId);

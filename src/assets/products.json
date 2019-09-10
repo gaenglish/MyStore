@@ -1,5 +1,11 @@
 [
   {
+    "id": "macbook-pro-15-grey",
+    "name": "Macbook Pro",
+    "price": 2399,
+    "image": "macbook-pro-15-grey.jpeg"
+  },
+  {
     "id": 1,
     "name": "Watch Series 4",
     "image": "watch-gold-pink.jpeg"
@@ -26,6 +32,13 @@
     }
   },
   {
+    "id": "beats-skyline-collection",
+    "name": "Beats Skyline Collection",
+    "description": "The Beats Studio3 Wireless Headphones in Shadow Gray.",
+    "price": 349.95,
+    "image": "beats-studio-grey.jpeg"
+  },
+  {
     "id": 3,
     "name": "Apple Watch Nike+",
     "description": "Space Gray Aluminum Case with Anthracite/Black Nike Sport Band",
@@ -45,23 +58,6 @@
         "image": "watch-nike-white.jpeg"
       }
     }
-  },
-  {
-    "id": 4,
-    "name": "iPad Air",
-    "image": "ipad-air.jpeg",
-    "colors": ["Space Gray", "Silver", "Gold"]
-  },
-  {
-    "id": 5,
-    "name": "iPad Pro 11 inch",
-    "image": "ipad-pro-11.png"
-  },
-  {
-    "id": 6,
-    "name": "iPad Pro 12 inch",
-    "price": 899,
-    "image": "ipad-pro-12.png"
   },
   {
     "id": 7,
@@ -112,7 +108,14 @@
     }
   },
   {
-    "id": 9,
+    "id": 16,
+    "name": "AirPods",
+    "description": "w/ Wireless Charging Case",
+    "price": 199,
+    "image": "airpods.png"
+  },
+  {
+    "id": "macbook-pro-13-silver",
     "name": "Macbook Pro",
     "description": "13 inch display",
     "price": 1299,
@@ -120,7 +123,7 @@
   },
 
   {
-    "id": 10,
+    "id": "apple-tv-4k",
     "name": "Apple TV 4k",
     "price": 199,
     "image": "apple-tv-4k.jpeg"
@@ -133,17 +136,36 @@
     "description": "3.1GHz 6-Core Processor with Turbo Boost up to 4.3GHz, 1TB Storage, Retina 5K Display"
   },
   {
-    "id": 12,
-    "name": "Macbook Pro",
-    "price": 2399,
-    "image": "macbook-pro-15-grey.jpeg"
+    "id": "ipad-pro-11-inch",
+    "name": "iPad Pro 11 inch",
+    "image": "ipad-pro-11.png"
   },
   {
-    "id": 13,
-    "name": "AirPods",
-    "description": "w/ Wireless Charging Case",
-    "price": 199,
-    "image": "airpods.png"
+    "id": "apple-pencil",
+    "name": "Apple Pencil",
+    "description": "Apple Pencil, Lightning adapter, and extra tip",
+    "price": 99,
+    "image": "apple-pencil.png",
+    "double": true
+  },
+  {
+    "id": 6,
+    "name": "ipad-pro-12-inch",
+    "price": 899,
+    "image": "ipad-pro-12.png"
+  },
+  {
+    "id": 15,
+    "name": "Apple Pencil",
+    "description": "Compatible with 11-inch iPad Pro and 12.9-inch iPad Pro (3rd generation).",
+    "price": 129,
+    "image": "ipad-pro-pencil.png",
+    "double": true
+  },
+  {
+    "id": 4,
+    "name": "iPad Air",
+    "image": "ipad-air.jpeg",
+    "colors": ["Space Gray", "Silver", "Gold"]
   }
-
 ]

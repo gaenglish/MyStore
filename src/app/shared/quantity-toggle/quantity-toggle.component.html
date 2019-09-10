@@ -1,0 +1,7 @@
+<button mat-icon-button (click)="qty = qty - 1; quantity.emit(qty)" [disabled]="qty <= 1 ">
+  <mat-icon>remove_circle_outline</mat-icon>
+</button>
+{{ qty }}
+<button mat-icon-button (click)="qty = qty + 1; quantity.emit(qty)">
+  <mat-icon>add_circle_outline</mat-icon>
+</button>

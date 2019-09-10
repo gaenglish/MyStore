@@ -1,5 +1,5 @@
 import {CartItem} from '../models/cart.model';
-import {Action} from '@ngrx/store';
+import {Action, createSelector} from '@ngrx/store';
 import {State} from './';
 import {createEntityAdapter, EntityState} from '@ngrx/entity';
 
@@ -68,5 +68,11 @@ export const selectCartState = (state: State) => state.cart;
 
 export const {
   selectAll: selectCart,
-  selectEntities: selectCartEntities
+  selectEntities: selectCartEntities,
+  selectTotal: selectCartItemCount
 } = adapter.getSelectors(selectCartState);
+
+
+export const selectCartTotal = createSelector(selectCartState, state => {
+
+});

@@ -39,6 +39,9 @@ import {MatDatepickerModule} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { AddToCartComponent } from './add-to-cart/add-to-cart.component';
+import { ProductImageComponent } from './product-image/product-image.component';
+import { EmptyCartComponent } from './empty-cart/empty-cart.component';
+import { QuantityToggleComponent } from './quantity-toggle/quantity-toggle.component';
 
 @NgModule({
   imports: [
@@ -83,7 +86,7 @@ import { AddToCartComponent } from './add-to-cart/add-to-cart.component';
     MatDividerModule,
     MatDialogModule,
   ],
-  declarations: [ToolbarComponent, AddToCartComponent],
+  declarations: [ToolbarComponent, AddToCartComponent, ProductImageComponent, EmptyCartComponent, QuantityToggleComponent],
   exports: [
     // Modules
     FormsModule,
@@ -123,7 +126,10 @@ import { AddToCartComponent } from './add-to-cart/add-to-cart.component';
     MatDividerModule,
     MatDialogModule,
     ToolbarComponent,
-    AddToCartComponent
+    AddToCartComponent,
+    ProductImageComponent,
+    EmptyCartComponent,
+    QuantityToggleComponent
   ],
   entryComponents: []
 })

@@ -12,7 +12,7 @@ export class CartComponent implements OnInit {
 
   @Output() toggleCart = new EventEmitter();
 
-  cart$: Observable<CartItem[]> = this.cartService.cart$;
+  cart$: Observable<CartItem[]> = this.cartService.cartItems$;
 
   constructor(public cartService: CartService) { }
 

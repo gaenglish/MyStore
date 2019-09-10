@@ -1,0 +1,5 @@
+
+<div class="product-image">
+  <img [src]="'/assets/product-images/' + (!optionId ? product.image : (product.options[optionId].image || product.image))">
+</div>
+

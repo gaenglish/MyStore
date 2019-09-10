@@ -9,3 +9,43 @@
 
   </ng-container>
 </app-toolbar>
+
+<div class="checkout">
+  <h2>Checkout</h2>
+
+  <div>
+
+    <mat-horizontal-stepper>
+      <mat-step>
+        <ng-template matStepLabel>Purchases</ng-template>
+
+        <div *ngFor="let item of cartService.cartItems$ | async">
+
+          <app-cart-item [cartItem]="item"></app-cart-item>
+
+        </div>
+
+        <button mat-raised-button color="primary" matStepperNext>Confirm shipping address</button>
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel>Shipping</ng-template>
+
+        <button mat-raised-button color="primary" matStepperNext>Choose payment method</button>
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel>Payment</ng-template>
+
+        <button mat-raised-button color="primary" matStepperNext>Make payment</button>
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel>Confirmation</ng-template>
+
+      </mat-step>
+
+    </mat-horizontal-stepper>
+
+
+  </div>
+</div>
+
+

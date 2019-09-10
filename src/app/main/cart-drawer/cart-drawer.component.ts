@@ -28,12 +28,12 @@ import {fadeIn} from '../../core/util/animations';
   ]
 })
 export class CartDrawerComponent implements OnInit {
+
   productDictionary$ = this.productService.productDictionary$;
-  cart$ = this.cartService.cart$;
 
   @Output() drawerToggle = new EventEmitter();
 
-  constructor(private cartService: CartService, private productService: ProductService) { }
+  constructor(public cart: CartService, private productService: ProductService) { }
 
   ngOnInit() {
   }
