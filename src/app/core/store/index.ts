@@ -3,7 +3,6 @@ import {
   ActionReducerMap,
   MetaReducer
 } from '@ngrx/store';
-import { environment } from '../../../environments/environment';
 import {productsReducer, ProductState} from './products.store';
 import {cartReducer, CartState} from './cart.store';
 import { localStorageSync } from 'ngrx-store-localstorage';

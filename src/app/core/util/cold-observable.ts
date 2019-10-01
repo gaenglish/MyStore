@@ -14,9 +14,9 @@ import { HttpResponse } from '@angular/common/http';
  * @param onUnsubscribe - An optional function that is performed after all subscriptions to this function have been terminated
  */
 export function coldObservable<T, U>(
-  observableTrigger$: Observable<T>,
+  data$: Observable<T>,
+  observableTrigger$: Observable<U>,
   triggerCondition: (data: any) => boolean,
-  data$: Observable<U>,
   apiCall$: (data?: any) => Observable<Response | HttpResponse<object>>,
   action: (data: Response | HttpResponse<object>) => void,
   onUnsubscribe: () => void = () => {}
@@ -41,11 +41,11 @@ export function coldObservablePersist<T>(
 ) {
   return coldObservable<T, T>(
     data$,
+    data$,
     t => {
       console.log(t);
       return !t;
     },
-    data$,
     apiCall$,
     action,
     onUnsubscribe

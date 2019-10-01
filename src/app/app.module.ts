@@ -13,6 +13,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { CartDrawerComponent } from './main/cart-drawer/cart-drawer.component';
 import { CartDrawerItemComponent } from './main/cart-drawer-item/cart-drawer-item.component';
 import { CartItemComponent } from './checkout/cart-item/cart-item.component';
+import { StoreModule } from '@ngrx/store';
 
 
 @NgModule({

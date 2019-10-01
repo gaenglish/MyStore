@@ -20,16 +20,16 @@ export class ProductService {
 
   products$ = coldObservable<Product[], Product[]>(
     this.store.select(selectAllProducts),
-    product => product.length < 1,
     this.store.select(selectAllProducts),
+    product => product.length < 1,
     () => this.data.get('assets/products.json', {}, '/'),
     response => this.store.dispatch(new UpsertManyProducts(JSON.parse(JSON.stringify(response.body))))
   );
 
-  productDictionary$ = coldObservable<Product[], Dictionary<Product>>(
+  productDictionary$ = coldObservable<Dictionary<Product>, Product[]>(
+    this.store.select(selectProductEntities),
     this.store.select(selectAllProducts),
     product => product.length < 1,
-    this.store.select(selectProductEntities),
     () => this.data.get('assets/products.json', {}, '/'),
     response => this.store.dispatch(new UpsertManyProducts(JSON.parse(JSON.stringify(response.body))))
   );
@@ -40,8 +40,8 @@ export class ProductService {
 
   next$ = (page: PageRequest) => coldObservable<Product[], Product[]>(
     this.store.select(selectProducts(page.ids)),
-    product => !product,
     this.store.select(selectProducts(page.ids)),
+    product => !product,
     () => this.data.get('products/page/' + page.number + '/items/' + page.count),
     response => this.store.dispatch(new UpsertManyProducts(response.body as Product[]))
   );
