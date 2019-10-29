@@ -2,17 +2,19 @@
 <ng-container *ngIf="cartService.cartDictionary$ | async as cart">
   <mat-card class="product-card">
 
-    <img class="image" [src]="'/assets/product-images/' + product.image">
+    <div (click)="openDialog()">
 
-    <div class="name">
-      {{ product.name }}
+      <img class="image" [src]="'/assets/product-images/' + product.image">
+
+      <div class="name">
+        {{ product.name }}
+      </div>
+
+      <div class="description">
+        {{ product.description }}
+      </div>
+
     </div>
-
-    <div class="description">
-      {{ product.description }}
-    </div>
-
-
 
     <div class="add-to-cart">
       <app-add-to-cart [product]="product"></app-add-to-cart>

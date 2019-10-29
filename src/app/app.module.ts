@@ -14,6 +14,8 @@ import { CartDrawerComponent } from './main/cart-drawer/cart-drawer.component';
 import { CartDrawerItemComponent } from './main/cart-drawer-item/cart-drawer-item.component';
 import { CartItemComponent } from './checkout/cart-item/cart-item.component';
 import { StoreModule } from '@ngrx/store';
+import { ProductDetailComponent } from './main/product-detail/product-detail.component';
+
 
 
 @NgModule({
@@ -26,8 +28,10 @@ import { StoreModule } from '@ngrx/store';
     CheckoutComponent,
     CartDrawerComponent,
     CartDrawerItemComponent,
-    CartItemComponent
+    CartItemComponent,
+    ProductDetailComponent,
   ],
+  entryComponents: [ProductDetailComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

@@ -14,3 +14,9 @@ h2 {
 .flex-spacer {
   flex: 1 1 auto;
 }
+
+.product-detail-dialog {
+  width: 64%;
+  height: 70%;
+  margin: 12% 18% 18% 18%;
+}

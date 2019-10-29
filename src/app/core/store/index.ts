@@ -7,7 +7,7 @@ import {productsReducer, ProductState} from './products.store';
 import {cartReducer, CartState} from './cart.store';
 import { localStorageSync } from 'ngrx-store-localstorage';
 
-const STORE_KEYS_TO_PERSIST = ['cart'];
+const STORE_KEYS_TO_PERSIST = ['cart', 'products'];
 
 export interface State {
   products: ProductState;
