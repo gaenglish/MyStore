@@ -2,9 +2,9 @@
 <ng-container *ngIf="cartService.cartDictionary$ | async as cart">
   <mat-card class="product-card">
 
-    <div (click)="openDialog()">
+    <div class="product-summary" (click)="openDialog()">
 
-      <img class="image" [src]="'/assets/product-images/' + product.image">
+      <img [alt]="product.name" class="image" [src]="'/assets/product-images/' + product.image">
 
       <div class="name">
         {{ product.name }}
